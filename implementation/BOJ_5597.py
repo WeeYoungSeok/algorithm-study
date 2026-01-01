@@ -4,7 +4,7 @@ import sys
 # https://www.acmicpc.net/problem/5597
 
 # [문제 정보]
-# 분류: 백준 5597번 : 과제 안 내신 분..?
+# 분류 : 백준 5597번 : 과제 안 내신 분..?
 # 난이도 : 브론즈3
 
 # [풀이 방법]
@@ -14,7 +14,6 @@ import sys
 input = sys.stdin.readline
 
 students = [i for i in range(1, 31)]
-print(students)
 
 submit_students = []
 
@@ -24,3 +23,18 @@ for num in range(28):
 for r in students:
     if r not in submit_students:
         print(r)
+
+
+# 더 빠른 방법
+students = set(range(1, 31))
+
+submitted = set()
+for _ in range(28):
+    submitted.add(int(input()))
+
+# 3. 차집합 연산 (-) 사용 (전체 - 제출자 = 안 낸 사람)
+# 정렬(sorted)해서 작은 수부터 출력
+missing = sorted(list(students - submitted))
+
+for student in missing:
+    print(student)
