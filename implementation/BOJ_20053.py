@@ -8,6 +8,7 @@ import sys
 # 난이도 : 브론즈3
 
 # [풀이 방법]
+# max, min의 함수를 이용하여 작성
 
 input = sys.stdin.readline
 
