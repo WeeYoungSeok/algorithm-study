@@ -18,23 +18,19 @@ import sys
 input = sys.stdin.readline
 
 def solution():
-    caws = []
-    caws_move = []
-    for i in range(1, 11):
-        caws.append(-1)
-        caws_move.append(0)
-    
+    caws = [-1] * 11
+    total_move = 0
     n = int(input())
+
     for _ in range(n):
         caw_num, move = map(int, input().split())
         if caws[caw_num - 1] != -1:
-            if caws[caw_num - 1] != move:
-                caws[caw_num - 1] = move
-                caws_move[caw_num - 1] += 1
-        else:
             caws[caw_num - 1] = move
+        elif caws[caw_num - 1] != move:
+            caws[caw_num - 1] = move
+            total_move += 1
 
-    print(sum(caws_move))
+    print(total_move)
     return
 
 if __name__ == "__main__":
