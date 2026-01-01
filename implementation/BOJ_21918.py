@@ -8,6 +8,7 @@ import sys
 # 난이도 : 브론즈2
 
 # [풀이 방법]
+# if문으로 명령어를 제어하여 리스트를 변경
 
 input = sys.stdin.readline
 
