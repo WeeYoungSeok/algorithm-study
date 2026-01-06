@@ -27,6 +27,6 @@ def solution(numbers, target):
                 return 0
                 
         else:
-            return dfs(now_num + numbers[index], index + 1, target) + dfs(now_num - numbers[index], index + 1, target)     
+            return dfs(now_num + numbers[index], index + 1) + dfs(now_num - numbers[index], index + 1)
     
     return dfs(0, 0)
