@@ -30,6 +30,9 @@ def solution(maps):
         # 현재 위치를 꺼낸다
         x, y = queue.popleft()
 
+        if x == len(maps)-1 and y == len(maps[0])-1:
+            return maps[x][y]
+        
         # 거기서 동서남북을 가본다.
         for d in range(4):
             # 지도 밖 검사
