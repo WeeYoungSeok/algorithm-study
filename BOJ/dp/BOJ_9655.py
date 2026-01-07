@@ -8,6 +8,8 @@ import sys
 # 난이도 : 실버 5
 
 # [풀이 방법]
+# 홀수턴은 전자가 무조건 이김
+# 짝수턴은 후자가 무조건 이김
 
 input = sys.stdin.readline
 
