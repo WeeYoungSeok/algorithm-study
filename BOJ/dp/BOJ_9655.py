@@ -8,23 +8,15 @@ import sys
 # 난이도 : 실버 5
 
 # [풀이 방법]
-# 홀수턴은 전자가 무조건 이김
-# 짝수턴은 후자가 무조건 이김
+# 1. (수학적 접근) 1개 또는 3개(홀수)만 가져갈 수 있으므로, 턴이 지날 때마다 홀/짝 상태가 바뀜.
+#    - N이 홀수면 상근(SK) 승리, 짝수면 창영(CY) 승리
+# 2. (DP 접근) dp[i] = i개의 돌을 다 가져가는 데 걸리는 최소 턴 수
+#    - 점화식: dp[i] = min(dp[i-1], dp[i-3]) + 1
 
 input = sys.stdin.readline
 
 def solution():
     n = int(input())
-
-    # dp = [0] * (n + 1)
-
-    # for i in range(1, n + 1):
-    #     if i % 2 == 1:
-    #         dp[i] = 1
-    #     else:
-    #         dp[i] = 0
-    # print('SK' if dp[n] == 1 else 'CY')
-
     print('SK' if n % 2 == 1 else 'CY')
     return
 
@@ -50,4 +42,5 @@ def solution_dp():
     return
 
 if __name__ == "__main__":
+    # solution_dp() # DP 버전
     solution()
