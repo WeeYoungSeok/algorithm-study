@@ -20,15 +20,9 @@ def solution():
     n = int(input())
     dp = [-1] * (n + 1)
     
-    for i in range(n + 1):
-        if i == 3:
-            dp[i] = 1
-        elif i == 5:
-            dp[5] = 1
-        else:
-            dp[i] = -1
-        if i == 5:
-            break
+    dp[3] = 1
+    if n >= 5: 
+        dp[5] = 1
 
     for i in range(6, n + 1):
         if dp[i - 3] != -1 and dp[i - 5] != -1:
