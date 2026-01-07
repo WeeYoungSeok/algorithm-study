@@ -1,4 +1,5 @@
 import sys
+import math
 
 # [문제 링크]
 # https://www.acmicpc.net/problem/1010
@@ -15,15 +16,16 @@ import sys
 
 input = sys.stdin.readline
 
-import math
-
 def solution():
     t = int(input())
 
     for _ in range(t):
         n, m = map(int, input().split())
-        print(math.factorial(m) // (math.factorial(n) * math.factorial(m - n)))
+        # print(math.factorial(m) // (math.factorial(n) * math.factorial(m - n)))
         
+        # 조합 공식 써도됨
+        # m개 중에 n개를 뽑기만 하면 끝 (순서는 자동)
+        print(math.comb(m, n))
     return
 
 if __name__ == "__main__":
