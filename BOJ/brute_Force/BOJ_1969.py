@@ -32,10 +32,19 @@ def solution():
                 word_cnt[dna[j][i]] = 1
             else:
                 word_cnt[dna[j][i]] += 1
-        words = [k for k,v in word_cnt.items() if max(word_cnt.values()) == v]
+        # 미리 최댓값을 구함
+        max_val = max(word_cnt.values()) # 딱 한 번만 계산!
+        words = [k for k,v in word_cnt.items() if v == max_val]
+
+        # 나의 코드
+        # words = [k for k,v in word_cnt.items() if max(word_cnt.values()) == v]
+        
         words.sort()
         answer.append(words[0])
-        cnt += sum(word_cnt.values()) - word_cnt[words[0]]
+        # 더 간단한 코드
+        cnt += n - max_val
+        # 나의 코드 
+        # cnt += sum(word_cnt.values()) - word_cnt[words[0]]
             
 
     print("".join(answer))
