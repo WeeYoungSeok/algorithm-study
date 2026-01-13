@@ -20,7 +20,7 @@ def solution():
 
     chess = []
 
-    min_change = 33
+    min_change = 64
 
     for _ in range(n):
         chess.append(list(input().strip()))
