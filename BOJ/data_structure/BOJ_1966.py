@@ -33,7 +33,7 @@ def solution():
 
         while docu_queue:
             docu = docu_queue.popleft()
-            if not docu_queue:
+            if not docu_queue: # 큐가 비어버리면 max()에서 에러 나니까 방어!
                 result += 1
                 break
             if max(docu_queue)[0] > docu[0]:
