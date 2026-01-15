@@ -47,14 +47,16 @@ def solution_dfs():
 def bfs(graphs, start, visited):    
     queue = deque([start])
     visited[start] = True
+    count = 0
     while queue:
         computer = queue.popleft()
         for com in graphs[computer]:
             if not visited[com]:
                 visited[com] = True
                 queue.append(com)
-
-    return visited.count(True) - 1 if visited.count(True) - 1 > 0 else 0
+                count += 1
+    return count
+    # return visited.count(True) - 1 if visited.count(True) - 1 > 0 else 0
 
 
 
