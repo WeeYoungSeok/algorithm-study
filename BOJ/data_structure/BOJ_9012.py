@@ -43,11 +43,10 @@ def solution_clean():
             if paren == "(":
                 paren_stack.append(paren)
             else:
-                if paren_stack:
-                    paren_stack.pop()
-                else:
+                if not paren_stack:
                     is_vps = not is_vps
                     break
+                paren_stack.pop()
 
         print("YES" if is_vps and not paren_stack else "NO")
     return
