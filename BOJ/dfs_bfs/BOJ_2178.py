@@ -9,6 +9,10 @@ from collections import deque
 # 난이도 : 실버 1
 
 # [풀이 방법]
+# 최단거리 문제이므로 BFS로 접근
+# 상하좌우를 검사하여 벽이거나 벽 밖이면 continue
+# 갈수있는 곳을 만났다면 왔던 곳에서 + 1
+# 도착 보장이 있으므로 마지막 인덱스 출력
 
 input = sys.stdin.readline
 
