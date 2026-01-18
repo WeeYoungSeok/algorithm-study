@@ -2,13 +2,18 @@ import sys
 from collections import deque
 
 # [문제 링크]
-# 
+# https://www.acmicpc.net/problem/2667
 
 # [문제 정보]
-# 분류 : 
-# 난이도 : 
+# 분류 : BOJ 2667 : 단지번호붙이기
+# 난이도 : 실버 1
 
 # [풀이 방법]
+# `bfs`를 이용하여 품
+# 집을 만나면 상하좌우를 검사하여 집을 방문처리
+# 방문 처리를 하면서 집의 개수 += 1
+# 하나의 단지가 끝나면 단지도 += 1
+# 집의 개수를 리스트에 담아 마지막에 sort처리
 
 input = sys.stdin.readline
 
