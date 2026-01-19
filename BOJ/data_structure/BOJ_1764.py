@@ -8,6 +8,9 @@ import sys
 # 난이도 : 실버 4
 
 # [풀이 방법]
+# set으로 듣도 못한 사람과 보도 못한 사람을 받는다
+# set의 기능 중 교집합을 이용하여 듣도 보도 못한 사람을 추림
+# list로 바꾸어 sort후 len, 이름 출력
 
 input = sys.stdin.readline
 
