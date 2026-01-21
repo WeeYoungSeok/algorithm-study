@@ -42,7 +42,8 @@ def solution():
 
             if prev_word == p:
                 if p != "e" and p != "o":
-                    is_acceptable = False    
+                    is_acceptable = False
+                    break    
             
             prev_word = p
 
