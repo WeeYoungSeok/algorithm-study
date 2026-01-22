@@ -2,13 +2,15 @@ import sys
 from collections import defaultdict
 
 # [문제 링크]
-# 
+# https://www.acmicpc.net/problem/20291
 
 # [문제 정보]
-# 분류 : 
-# 난이도 : 
+# 분류 : BOJ 20291 : 파일 정리
+# 난이도 : 실버 3
 
 # [풀이 방법]
+# 확장자를 딕셔너리에 저장
+# 키 값을 사전순으로 sort 후 출력
 
 input = sys.stdin.readline
 
