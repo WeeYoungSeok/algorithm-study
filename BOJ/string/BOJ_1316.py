@@ -25,14 +25,14 @@ def solution():
     cnt = n
     for _ in range(n):
         word = input().strip()
-        cheker = True
+        checker = True
         for i in range(len(word)):
             for j in range(i + 1, len(word)):
                 if word[i] == word[j]:
                     if word[j - 1] != word[i]:
-                        cheker = False
+                        checker = False
                         break
-            if not cheker:
+            if not checker:
                 cnt -= 1
                 break
                 
