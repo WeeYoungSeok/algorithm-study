@@ -13,10 +13,10 @@ import re
 
 input = sys.stdin.readline
 
-def solution():
+def solution_regx():
     t = int(input())
     
-    pattern = re.compile('^[A-F]?A+F+C+[A-F]?$')
+    pattern = re.compile("^[A-F]?A+F+C+[A-F]?$")
 
     for _ in range(t):
         word = input().strip()
@@ -26,5 +26,51 @@ def solution():
         else:
             print("Good")
 
+def solution():
+    t = int(input())
+    valid_chars = set("ABCDEF")
+
+    for _ in range(t):
+        word = input().strip()
+        
+        if set(word) - valid_chars:
+            print("Good")
+            continue
+
+        n = len(word)
+        idx = 0
+
+        if idx < n and word[idx] != "A":
+            idx += 1
+        
+        if idx >= n or word[idx] != "A":
+            print("Good")
+            continue
+
+        while idx < n and word[idx] == "A":
+            idx += 1
+
+        if idx >= n or word[idx] != "F":
+            print("Good")
+            continue
+
+        while idx < n and word[idx] == "F":
+            idx += 1
+
+        if idx >= n or word[idx] != "C":
+            print("Good")
+            continue
+
+        while idx < n and word[idx] == "C":
+            idx += 1
+            
+        if idx == n:
+            print("Infected!")
+        elif idx == n - 1:
+            print("Infected!")
+        else:
+            print("Good")
+
 if __name__ == "__main__":
     solution()
+    # solution_regx()
