@@ -11,6 +11,9 @@ import re
 # [풀이 방법]
 # 파이썬 라이브러리중 re를 이용해 정규식 패턴 이용
 
+# [풀이 방법]
+# 문제에 조건에 맞게 첫 부분부터 차례대로 조건을 추가해 출력
+
 input = sys.stdin.readline
 
 def solution_regx():
