@@ -1,5 +1,4 @@
 import sys
-from collections import deque
 
 # [문제 링크]
 # https://www.acmicpc.net/problem/2615
