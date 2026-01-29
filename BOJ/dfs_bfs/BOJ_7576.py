@@ -16,9 +16,9 @@ from collections import deque
 
 input = sys.stdin.readline
 
-def bfs(start_x_y, tomato):
+def bfs(tomatoes_x_y, tomato):
     queue = deque()
-    for s in start_x_y:
+    for s in tomatoes_x_y:
         queue.append((s[0], s[1]))
 
     dx = [0, 0, 1, -1]
@@ -47,7 +47,7 @@ def solution():
 
     tomato = []
 
-    start_x_y = []
+    tomatoes_x_y = []
 
     for _ in range(n):
         tomato.append(list(map(int, input().split())))
@@ -55,9 +55,9 @@ def solution():
     for i in range(n):
         for j in range(m):
             if tomato[i][j] == 1:
-                start_x_y.append([i, j])
+                tomatoes_x_y.append([i, j])
     
-    bfs(start_x_y, tomato)
+    bfs(tomatoes_x_y, tomato)
     
     if 0 in (s_num for row in tomato for s_num in row):
         print(-1)
