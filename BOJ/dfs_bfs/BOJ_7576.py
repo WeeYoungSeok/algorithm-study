@@ -17,15 +17,11 @@ from collections import deque
 input = sys.stdin.readline
 
 def bfs(tomatoes_x_y, tomato):
-    queue = deque()
-    for s in tomatoes_x_y:
-        queue.append((s[0], s[1]))
-
     dx = [0, 0, 1, -1]
     dy = [1, -1, 0, 0]
 
-    while queue:
-        nx, ny = queue.popleft()
+    while tomatoes_x_y:
+        nx, ny = tomatoes_x_y.popleft()
 
         for k in range(4):
             cx = nx + dx[k]
@@ -38,16 +34,14 @@ def bfs(tomatoes_x_y, tomato):
 
             if tomato[cx][cy] == 0:
                 tomato[cx][cy] = tomato[nx][ny] + 1
-                queue.append((cx, cy))
+                tomatoes_x_y.append((cx, cy))
             
     return
 
 def solution():
     m, n = map(int, input().split())
-
     tomato = []
-
-    tomatoes_x_y = []
+    tomatoes_x_y = deque()
 
     for _ in range(n):
         tomato.append(list(map(int, input().split())))
@@ -55,7 +49,7 @@ def solution():
     for i in range(n):
         for j in range(m):
             if tomato[i][j] == 1:
-                tomatoes_x_y.append([i, j])
+                tomatoes_x_y.append((i, j))
     
     bfs(tomatoes_x_y, tomato)
     
