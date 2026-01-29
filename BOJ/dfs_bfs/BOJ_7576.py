@@ -16,12 +16,12 @@ from collections import deque
 
 input = sys.stdin.readline
 
-def bfs(tomatoes_x_y, tomato):
+def bfs(queue, tomato):
     dx = [0, 0, 1, -1]
     dy = [1, -1, 0, 0]
 
-    while tomatoes_x_y:
-        nx, ny = tomatoes_x_y.popleft()
+    while queue:
+        nx, ny = queue.popleft()
 
         for k in range(4):
             cx = nx + dx[k]
@@ -34,7 +34,7 @@ def bfs(tomatoes_x_y, tomato):
 
             if tomato[cx][cy] == 0:
                 tomato[cx][cy] = tomato[nx][ny] + 1
-                tomatoes_x_y.append((cx, cy))
+                queue.append((cx, cy))
             
     return
 
