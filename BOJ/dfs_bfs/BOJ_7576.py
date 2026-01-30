@@ -16,7 +16,7 @@ from collections import deque
 
 input = sys.stdin.readline
 
-def bfs(queue, tomato):
+def bfs(queue, list):
     dx = [0, 0, 1, -1]
     dy = [1, -1, 0, 0]
 
@@ -27,13 +27,13 @@ def bfs(queue, tomato):
             cx = nx + dx[k]
             cy = ny + dy[k]
 
-            if cx < 0 or cx >= len(tomato) or cy < 0 or cy >= len(tomato[0]):
+            if cx < 0 or cx >= len(list) or cy < 0 or cy >= len(list[0]):
                 continue
-            if tomato[cx][cy] == -1:
+            if list[cx][cy] == -1:
                 continue
 
-            if tomato[cx][cy] == 0:
-                tomato[cx][cy] = tomato[nx][ny] + 1
+            if list[cx][cy] == 0:
+                list[cx][cy] = list[nx][ny] + 1
                 queue.append((cx, cy))
             
     return
