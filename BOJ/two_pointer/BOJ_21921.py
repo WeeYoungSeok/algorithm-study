@@ -58,7 +58,7 @@ def solution_sliding_window():
 
         if current_sum > max_visit:
             max_visit = current_sum
-            max_count += 1
+            max_count = 1
         elif current_sum == max_visit:
             max_count += 1
     
@@ -71,5 +71,5 @@ def solution_sliding_window():
     return
 
 if __name__ == "__main__":
-    solution()
+    # solution()
     solution_sliding_window()
