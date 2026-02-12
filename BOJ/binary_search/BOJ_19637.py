@@ -49,7 +49,6 @@ def solution_binary_search():
         
         start = 0
         end = n - 1
-        idx = 0
 
         # bisect_left 직접 구현
         while start < end:
@@ -59,8 +58,7 @@ def solution_binary_search():
                 end = mid
             else:
                 start = mid + 1
-            idx = start
-        print(title[idx])
+        print(title[start])
     return
 
 if __name__ == "__main__":
