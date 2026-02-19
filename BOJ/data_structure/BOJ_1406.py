@@ -30,13 +30,13 @@ def solution():
             left_word.append(command[1])
         else:
             if command[0] == "L":
-                if len(left_word) > 0:
+                if left_word > 0:
                     right_word.appendleft(left_word.pop())
             elif command[0] == "D":
-                if len(right_word) > 0:
+                if right_word > 0:
                     left_word.append(right_word.popleft())
             else:
-                if len(left_word) > 0:
+                if left_word > 0:
                     left_word.pop()
     print("".join(left_word + right_word))
     return
