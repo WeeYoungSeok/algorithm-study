@@ -1,5 +1,5 @@
 import sys
-from collections import defaultdict
+# from collections import defaultdict
 
 # [문제 링크]
 # https://www.acmicpc.net/problem/20922
@@ -20,7 +20,9 @@ def solution():
     seq = list(map(int, input().split()))
 
     max_len = 0
-    duple_num = defaultdict(int)
+    # duple_num = defaultdict(int)
+    # list로 했을 때 메모리 효율이 더 좋음
+    duple_num = [0] * 100001
 
     start = 0
     end = 0
