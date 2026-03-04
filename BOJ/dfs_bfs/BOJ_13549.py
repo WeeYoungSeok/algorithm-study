@@ -26,30 +26,33 @@ def solution():
     while queue:
         # front에서 먼저 처리
         pop_num = queue.popleft()
-        if pop_num > 100000:
-            continue
+        if pop_num == k:
+            print(times[k])
+            return
+        
         telpo = pop_num * 2
         front_move = pop_num + 1
         back_move = pop_num - 1
 
-        if 0 <= telpo <= 100000:
+        if telpo <= 100000 and times[telpo] > times[pop_num]:
             # 순간이동을 먼저 가중치가 0이므로 왼쪽에 삽입
-            if telpo != pop_num:
-                if times[telpo] > times[pop_num]:
-                    queue.appendleft(pop_num * 2)
-                    times[telpo] = times[pop_num]
+            queue.appendleft(pop_num * 2)
+            times[telpo] = times[pop_num]
         
-        if 0 <= front_move <= 100000:
-            # -1 +1은 1초가 걸리므로 오른쪽에 삽입
-            if times[front_move] > times[pop_num] + 1:
-                queue.append(pop_num + 1)
-                times[front_move] = times[pop_num] + 1
-        if 0 <= back_move <= 100000:
-            if times[back_move] > times[pop_num] + 1:
-                queue.append(pop_num - 1)
-                times[back_move] = times[pop_num] + 1
-
-    print(times[k])
+        # 양쪽 걷기 
+        # if 0 <= front_move <= 100000:
+        #     # -1 +1은 1초가 걸리므로 오른쪽에 삽입
+        #     if times[front_move] > times[pop_num] + 1:
+        #         queue.append(pop_num + 1)
+        #         times[front_move] = times[pop_num] + 1
+        # if 0 <= back_move <= 100000:
+        #     if times[back_move] > times[pop_num] + 1:
+        #         queue.append(pop_num - 1)
+        #         times[back_move] = times[pop_num] + 1
+        for move in [back_move, front_move]:
+            if move >= 0 and move < 100001 and times[move] > times[pop_num] + 1:
+                times[move] = times[pop_num] + 1
+                queue.append(move)
 
     return
 
