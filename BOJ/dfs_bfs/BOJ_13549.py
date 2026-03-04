@@ -1,4 +1,5 @@
 import sys
+import heapq
 from collections import deque
 
 # [문제 링크]
@@ -56,5 +57,39 @@ def solution():
 
     return
 
+def dijkstra_solution():
+    n, k = map(int, input().split())
+
+    dist = [float("inf")] * 100001
+    dist[n] = 0
+
+    pq = []
+    heapq.heappush(pq, (0, n))
+
+    while pq:
+        time, curr = heapq.heappop(pq)
+
+        if dist[curr] < time:
+            continue
+
+        if curr == k:
+            print(time)
+            return
+        
+        # 순간이동
+        telpo = curr * 2
+        if telpo < 100001 and dist[telpo] > time:
+            dist[telpo] = time
+            heapq.heappush(pq, (time, curr * 2))
+        
+        # 걷기
+        for move in [curr - 1, curr + 1]:
+            if move >= 0 and move < 100001 and dist[move] > time + 1:
+                dist[move] = time + 1
+                heapq.heappush(pq, (time + 1, move))
+    
+    return
+
 if __name__ == "__main__":
     solution()
+    dijkstra_solution()
