@@ -10,6 +10,9 @@ import copy
 # 난이도 : 골드 5
 
 # [풀이 방법]
+# T에서 S로 한 글자씩 지워가는 역방향 브루트포스 탐색을 수행함
+# 앞이 'B'인 경우와 뒤가 'A'인 경우를 모두 확인해야 하므로 재귀를 활용함
+# 리스트 슬라이싱을 통해 원본을 보존하며 효율적으로 복사본을 생성함
 
 input = sys.stdin.readline
 
@@ -69,5 +72,5 @@ def list_solution():
     return
 
 if __name__ == "__main__":
-    solution()
-    # list_solution()
+    # solution()
+    list_solution()
