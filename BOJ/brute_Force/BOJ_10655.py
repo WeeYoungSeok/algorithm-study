@@ -30,7 +30,6 @@ def solution():
 
     for i in range(1, n - 1):
         distance = 0
-        # 해당 지점을 뺌
         # 해당 지점에서 이전 지점까지의 거리
         distance -= abs(check_points[i - 1][0] - check_points[i][0]) + abs(check_points[i - 1][1] - check_points[i][1])
         # 해당 지점에서 다음 지점까지의 거리
