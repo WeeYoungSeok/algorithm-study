@@ -23,11 +23,9 @@ def solution():
     expec_ranks.sort()
 
     result = 0
-    rank = 1
-    # 남아있는 순서대로
-    for r in expec_ranks:
-        result += abs(rank - r)
-        rank += 1
+    
+    for i in range(n):
+        result += abs((i + 1) - expec_ranks[i])
     
     print(result)
     return
